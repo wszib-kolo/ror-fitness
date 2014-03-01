@@ -11,3 +11,5 @@
  *= require_self
  *= require_tree .
  */
+
+ /* <%= stylesheets_link_tag "nazwapliku" %> */
