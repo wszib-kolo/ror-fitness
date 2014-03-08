@@ -1,1 +1,19 @@
 <h1>Witaj na stronie!</h1>
+
+<table>
+	<tr>
+		<th>ID</th>
+    	<th>Nazwa</th>
+    	<th>ID uczestnika</th>
+    	<th>Data</th>
+  </tr>
+ 
+  <% @schedule.each do |schedule| %>
+    <tr>
+    	<td><%= schedule.id %></td>
+		<td><%= schedule.name %></td>
+		<td><%= schedule.student_id %></td>
+		<td><%= schedule.date.strftime("%d-%m-%Y %H:%M") %></td>
+    </tr>
+  <% end %>
+</table>
