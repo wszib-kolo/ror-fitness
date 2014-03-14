@@ -11,9 +11,9 @@
   <% @schedule.each do |schedule| %>
     <tr>
     	<td><%= schedule.id %></td>
-		<td><%= schedule.name %></td>
-		<td><%= schedule.student_id %></td>
-		<td><%= schedule.date.strftime("%d-%m-%Y %H:%M") %></td>
+  		<td><%= schedule.name %></td>
+  		<td><%= schedule.student_id %></td>
+  		<td><%= schedule.date.strftime("%d-%m-%Y %H:%M") %></td>
     </tr>
   <% end %>
 </table>
