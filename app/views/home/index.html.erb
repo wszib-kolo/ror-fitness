@@ -12,7 +12,7 @@
     <tr>
     	<td><%= schedule.id %></td>
   		<td><%= schedule.name %></td>
-  		<td><%= schedule.student_id %></td>
+  		<td><%= current_user.id %></td>
   		<td><%= schedule.date.strftime("%d-%m-%Y %H:%M") %></td>
     </tr>
   <% end %>
