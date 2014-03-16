@@ -8,17 +8,22 @@
 </head>
 <body>
 
-<div id="user_nav">
-  <% if user_signed_in? %>
-    Zalogowany jako <%= current_user.email %>.
-    <%= link_to "Wyloguj", destroy_user_session_path, :method => :delete %>
-  <% else %>
-    <%= link_to "Zarejestruj się", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
-  <% end %>
+<div class="container-narrow">
+  <div class="masthead">
+    <%= render 'layouts/user_header' %>
+    <h3 class="muted"><%= link_to "Fitness", root_path %></h3>
+    <h5 class="muted">Prosty system do zarządzania swoim Fitnessem</h5>
+  </div>
+  <hr />
 </div>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<% flash.each do |type, message| %>
+  <div class="alert <%= bootstrap_class_for(type) %> fade in">
+    <a class="close" href="#">×</a>
+    <%= message %>
+  </div>
+<% end %>
+
 
 <%= yield %>
 
