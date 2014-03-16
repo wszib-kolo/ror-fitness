@@ -3,7 +3,7 @@ class CreateSchedules < ActiveRecord::Migration
     create_table :schedules do |t|
       t.string :name
       t.references :user
-      t.date :date
+      t.datetime :date
 
       t.timestamps
     end
