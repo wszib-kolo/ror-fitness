@@ -8,22 +8,25 @@
 </head>
 <body>
 
-<div class="container-narrow">
-  <div class="masthead">
-    <%= render 'layouts/user_header' %>
-    <h3 class="muted"><%= link_to "Fitness", root_path %></h3>
-    <h5 class="muted">Prosty system do zarządzania swoim Fitnessem</h5>
-  </div>
-  <hr />
-</div>
-
 <% flash.each do |type, message| %>
-  <div class="alert <%= bootstrap_class_for(type) %> fade in">
-    <a class="close" href="#">×</a>
+  <div id="flash" class="alert <%= bootstrap_class_for(type) %> alert-dismissable fade in">
     <%= message %>
   </div>
 <% end %>
 
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+   <div class="navbar-inner">
+      <a class="navbar-brand" href="#">Fitness</a>
+      <ul class="nav navbar-nav">
+         <li><%= link_to 'Strona Główna',  root_path %></li>
+         <li><a href="#">O nas</a></li>     
+      </ul>
+      <ul class="nav navbar-nav pull-right">
+        <%= render 'layouts/user_header' %>
+      </ul>
+  </div>    
+</div>
 
 <%= yield %>
 

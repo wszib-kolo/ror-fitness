@@ -16,6 +16,11 @@
  /* <%= stylesheets_link_tag "nazwapliku" %> */
 
 
+body { 
+  padding-top: 60px; 
+}   
+  
+
 /* User sign in and sign forms. */
 .border-form-div {
   max-width: 300px;
@@ -34,6 +39,8 @@
 .border-form-div .checkbox {
   margin-bottom: 10px;
 }
+
+
 .border-form-div input[type="text"],
 .border-form-div input[type="email"],
 .border-form-div input[type="password"] {
@@ -41,4 +48,25 @@
   height: auto;
   margin-bottom: 15px;
   padding: 7px 9px;
+  border: 1px solid #666;
+  border-radius: 5px;
+    -webkit-transition: border 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+    -moz-transition: border 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+    -ms-transition: border 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+    -o-transition: border 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+    transition: border 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+
+.border-form-div input[type="text"],
+.border-form-div input[type="password"]:focus {
+    border: 1px solid #09c;
+    box-shadow: 0 0 7px rgba(0, 200, 204, 0.7);
+    outline: none;
+}
+
+.border-form-div input[type="email"]:focus {
+  border: 1px solid #09c;
+  box-shadow: 0 0 7px rgba(0, 200, 204, 0.7);
+  outline: none;
 }
