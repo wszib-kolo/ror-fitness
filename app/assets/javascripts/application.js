@@ -14,6 +14,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require dataTables/jquery.dataTables
+//= require dataTables/jquery.dataTables.bootstrap3
 //= require_tree .
 
 $(document).ready(function(){
@@ -21,3 +23,16 @@ $(document).ready(function(){
     $('#flash').remove();
   }, 3000);
  })
+
+$(document).ready(function() {
+	$('#table_schedule').dataTable( {
+        "sPaginationType": "bootstrap",
+		"iDisplayLength": 3,
+		"aLengthMenu": [[3, 5, 10, -1], [3, 5, 10, "All"]],
+		"oLanguage": {
+				"sLengthMenu": "Pokaż _MENU_",
+				"sInfo": "Showing _START_ to _END_ of _TOTAL_ records",
+				"sSearch": "Wyszukaj:"
+		}
+	} );
+} );

@@ -5,7 +5,8 @@
 
 <%= link_to 'Zobacz wszystkie zajęcia', 'schedule/schedules' %><br><br>
 
-<table class="table table-striped">
+<table id="table_schedule" class="table table-striped table-bordered table-condensed">
+<thead>
   <tr>
     <th>ID</th>
       <th>Nazwa</th>
@@ -13,7 +14,9 @@
       <th>Prowadzący</th>
       <th>Data</th>
   </tr>
+ </thead>
  
+ <tbody>
   <% @schedule.each do |schedule| %>
     <tr>
       <td><%= schedule.id %></td>
@@ -23,6 +26,7 @@
       <td><%= schedule.date.strftime("%d-%m-%Y %H:%M") %></td>
     </tr>
   <% end %>
+</tbody>
 </table>
 
 </body>

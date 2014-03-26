@@ -8,11 +8,13 @@
 </head>
 <body>
 
-<% flash.each do |type, message| %>
-  <div id="flash" class="alert <%= bootstrap_class_for(type) %> alert-dismissable fade in">
-    <%= message %>
-  </div>
-<% end %>
+<div class="container">
+  <% flash.each do |type, message| %>
+    <div id="flash" class="alert <%= bootstrap_class_for(type) %> alert-dismissable fade in">
+      <%= message %>
+    </div>
+  <% end %>
+</div>
 
 
 <div class="navbar navbar-inverse navbar-fixed-top">
