@@ -36,3 +36,16 @@ $(document).ready(function() {
 		}
 	} );
 } );
+
+$(document).ready(function() {
+	$('#register_table').dataTable( {
+        "sPaginationType": "bootstrap",
+		"iDisplayLength": -1,
+		"aLengthMenu": [[3, 5, 10, -1], [3, 5, 10, "All"]],
+		"oLanguage": {
+				"sLengthMenu": "Pokaż _MENU_",
+				"sInfo": "Showing _START_ to _END_ of _TOTAL_ records",
+				"sSearch": "Wyszukaj:"
+		}
+	} );
+} );
