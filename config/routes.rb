@@ -1,4 +1,5 @@
 Fitness::Application.routes.draw do
+  get "schedule/schedules"
   get "home/index"
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
