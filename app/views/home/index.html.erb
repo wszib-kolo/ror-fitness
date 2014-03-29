@@ -1,26 +1,28 @@
+
+<body>
 <h1>Nadchodzące zajęcia</h1>
 
 
 <%= link_to 'Zobacz wszystkie zajęcia', 'schedule/schedules' %><br><br>
 
-<table>
-	<tr>
-		<th>ID</th>
-    	<th>Nazwa</th>
-    	<th>ID uczestnika</th>
-      <th>Imię prowadzącego</th>
-      <th>Nazwisko prowadzącego</th>
-    	<th>Data</th>
+<table class="table table-striped">
+  <tr>
+    <th>ID</th>
+      <th>Nazwa</th>
+      <th>ID uczestnika</th>
+      <th>Prowadzący</th>
+      <th>Data</th>
   </tr>
  
   <% @schedule.each do |schedule| %>
     <tr>
-    	<td><%= schedule.id %></td>
-  		<td><%= schedule.name %></td>
-  		<td><%= current_user.id %></td>
-      <td><%= schedule.teacher.firstname %></td>
-      <td><%= schedule.teacher.lastname %></td>
-  		<td><%= schedule.date.strftime("%d-%m-%Y %H:%M") %></td>
+      <td><%= schedule.id %></td>
+      <td><%= schedule.name %></td>
+      <td><%= current_user.id %></td>
+      <td><%= schedule.teacher.firstname %><%= " " %><%= schedule.teacher.lastname %></td>
+      <td><%= schedule.date.strftime("%d-%m-%Y %H:%M") %></td>
     </tr>
   <% end %>
 </table>
+
+</body>
