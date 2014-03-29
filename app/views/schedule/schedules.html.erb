@@ -1,16 +1,18 @@
-<h1>Twoje wszystkie zajęcia</h1>
+<h1>Twoje wszystkie zajęcia</h1><br>
 
-<%= link_to 'Wróć do strony głównej', '/' %><br><br>
-
-<table class="table table-striped">
+<table id="register_table" class="table table-striped table-bordered table-condensed">
+  <thead>
   <tr>
   <th>ID</th>
       <th>Nazwa</th>
       <th>ID uczestnika</th>
       <th>Prowadzący</th>
       <th>Data</th>
+      <th></th>
   </tr>
- 
+ </thead> 
+
+ <tbody>
   <% @schedule.each do |schedule| %>
     <tr>
       <td><%= schedule.id %></td>
@@ -18,6 +20,8 @@
       <td><%= current_user.id %></td>
       <td><%= schedule.teacher.firstname %><%= " " %><%= schedule.teacher.lastname %></td>
       <td><%= schedule.date.strftime("%d-%m-%Y %H:%M") %></td>
+      <td><a href="" class="btn btn-success">Zapisz się</a></td>
     </tr>
   <% end %>
+  </tbody> 
 </table>
