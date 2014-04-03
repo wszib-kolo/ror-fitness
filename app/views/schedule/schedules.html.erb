@@ -8,6 +8,7 @@
       <th>ID uczestnika</th>
       <th>Prowadzący</th>
       <th>Data</th>
+      <th>Ilość miejsc</th>
       <th></th>
   </tr>
  </thead> 
@@ -20,8 +21,12 @@
       <td><%= current_user.id %></td>
       <td><%= schedule.teacher.firstname %><%= " " %><%= schedule.teacher.lastname %></td>
       <td><%= schedule.date.strftime("%d-%m-%Y %H:%M") %></td>
+      <td><%= @reserv %><%= "/" %> <%= schedule.amount %></td>
       <td><a href="" class="btn btn-success">Zapisz się</a></td>
     </tr>
   <% end %>
   </tbody> 
-</table>
+</table><br>
+
+
+

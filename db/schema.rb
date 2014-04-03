@@ -11,19 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140315225841) do
+ActiveRecord::Schema.define(version: 20140402233453) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "schedules", force: true do |t|
     t.string   "name"
-    t.integer  "user_id",    null: false
+    t.integer  "user_id"
+    t.datetime "date"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "teacher_id"
-    t.datetime "date"
+    t.integer  "amount"
   end
+
+  create_table "schedules_users", id: false, force: true do |t|
+    t.integer "schedule_id"
+    t.integer "user_id"
+  end
+
+  add_index "schedules_users", ["schedule_id", "user_id"], name: "index_schedules_users_on_schedule_id_and_user_id", using: :btree
+  add_index "schedules_users", ["user_id"], name: "index_schedules_users_on_user_id", using: :btree
 
   create_table "teachers", force: true do |t|
     t.string   "firstname"
